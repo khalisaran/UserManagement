@@ -1,0 +1,20 @@
+{
+  "name": "test-g",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --proxy-config proxy.config.json",
+    "build": "ng build --proxy-config proxy.config.json",
+    "buildProject": "ng build -op ../desktop/client   -bh /testing-web-10052/",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": false,
+  "dependencies": {
+    "chartjs": "^0.3.24",
+    "geppetto_angular_package": "^1.0.0",
+    "jsreport-browser-client-dist": "^1.0.4"
+  }
+}

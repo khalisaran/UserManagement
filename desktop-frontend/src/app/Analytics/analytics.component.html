@@ -1,0 +1,16 @@
+<section>
+  <div class="container">
+    <div class="row" style="padding-top: 70px">
+      <div class="col-lg-1">
+        <label>Reports</label>
+      </div>
+      <div class="col-lg-2">
+        <mat-select placeholder="Select" class="null" style="width: 100%;" (change)="selectedreport()" [(ngModel)]="report" >
+          <mat-option *ngFor="let report of listoftemplate" [value]="report.reportname">{{report.reportname}}</mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div id ="report" style="padding-top: 80px"></div>
+
+  </div>
+</section>

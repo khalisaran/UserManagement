@@ -1,0 +1,12 @@
+{
+  "name": "Testing",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node main"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "geppetto_node_pacakge": "^1.0.0"
+  }
+}

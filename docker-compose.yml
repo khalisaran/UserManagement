@@ -1,0 +1,20 @@
+version: '2'
+services:
+  db:
+    container_name: Testing-10052-db
+    build: db
+    image: testing-10052/db
+    ports:
+      - "32657:3306"
+  node:
+    depends_on:
+      - db
+
+    container_name: Testing-10052-web
+    build: desktop
+    image: testing-10052/web
+    links:
+      - db:mydb
+
+    ports:
+      - "9090:3000"

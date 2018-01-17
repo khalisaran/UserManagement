@@ -1,0 +1,81 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Testing
+host: 34.193.74.68:9090
+basePath: /Testing_10052
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /Noun_Default_Activity/Noun:
+    put:
+      description: Update Noun
+      parameters:
+        - name: noun
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Noun'
+      responses:
+        "200":
+          description: Success
+    get:
+      description: Get all Noun
+      responses:
+        "200":
+          description: Success
+    post:
+      description: Create Noun
+      parameters:
+        - name: noun
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Noun'
+      responses:
+        "201":
+          description: Success
+  /Noun_Default_Activity/Noun/{NounId}:
+    delete:
+      description: Delete Noun
+      parameters:
+        - name: NounId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "204":
+          description: Success
+    get:
+      description: Get Noun by id
+      parameters:
+        - name: NounId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "200":
+          description: Success
+
+definitions:
+  Noun:
+    required:
+      - name
+
+    properties:
+      id:
+        type: integer
+      name:
+        type: string

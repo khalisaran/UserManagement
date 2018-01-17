@@ -1,0 +1,49 @@
+<section>
+  <div class="container">
+
+    <div class="row">
+      <mat-form-field>
+        <mat-select [placeholder]="Currentplaceholer" class="null" style="width: 100%;" (change)="reportuser()" [(ngModel)]="report">
+          <mat-option *ngFor="let report of listoftemplate" [value]="report.name" >{{report.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div *ngIf="useravailable">
+    <h4>List of users in the report</h4>
+    <mat-selection-list>
+        <mat-list-option *ngFor="let x of userselected" (click)="removeuser(x)">{{x.username}}</mat-list-option>
+    </mat-selection-list> 
+    <div class="pull-right">
+    <button mat-raised-button color="primary">Remove & save</button>
+  </div>
+  <br>
+    <hr>
+  </div> 
+    <div>
+      <h4>Select user to add </h4>
+      <mat-selection-list #users >
+        <mat-list-option *ngFor="let user of listofusers" (click)="adduser(user)">
+          {{user.username}}
+        </mat-list-option>
+      </mat-selection-list>
+      <p>
+        Options selected: {{users.selectedOptions.selected.length}}
+      </p>
+      <br>
+
+      <div class="row pull-right">
+        <button mat-raised-button color="primary" (click)="save()">Save</button>
+        <button mat-raised-button color="warn">Cancel</button>
+      </div>
+    </div>
+    <div>
+      <h4>Tutorial</h4>
+      <ul>
+        <li>How to Connect a database</li><a href=""  ></a>
+        <li>How to create a new report</li><a href="" ></a>
+      </ul>
+    </div>
+
+
+  </div>
+</section>
